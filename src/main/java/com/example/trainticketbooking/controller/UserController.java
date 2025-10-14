@@ -1,7 +1,7 @@
 package com.example.trainticketbooking.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +20,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
-        return ResponseEntity.ok(userService.createUser(user));
+        return ResponseEntity.ok(userService.CreateUser(user));
     }
 
     @GetMapping("/{id}")

@@ -1,5 +1,9 @@
 package com.example.trainticketbooking.repository;
 
-public class TrainRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.trainticketbooking.entity.Train;
+
+public interface TrainRepository extends JpaRepository<Train, Long>{
     
 }

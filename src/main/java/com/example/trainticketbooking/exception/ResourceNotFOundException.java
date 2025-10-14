@@ -1,5 +1,7 @@
 package com.example.trainticketbooking.exception;
 
-public class ResourceNotFOundException {
-    
+public class ResourceNotFoundException  extends RuntimeException{
+    public ResourceNotFoundException(String message){
+        super(message);
+    }    
 }
