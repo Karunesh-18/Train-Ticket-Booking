@@ -14,7 +14,12 @@ public class Train {
     
     private Long Id;
     private String trainName;
+    private String trainNumber;
     private String source;
     private String destination;
+    private String arrivalTime;
+    private String departureTime;
+    private int totalSeats;
     private int availableSeats;
+
 }
