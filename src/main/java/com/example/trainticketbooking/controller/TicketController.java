@@ -1,4 +1,4 @@
-package com.example.trainbookingsystem.controller;
+package com.example.trainticketbooking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.trainbookingsystem.entity.Ticket;
-import com.example.trainbookingsystem.entity.Train;
-import com.example.trainbookingsystem.entity.User;
-import com.example.trainbookingsystem.service.TicketService;
-import com.example.trainbookingsystem.service.TrainService;
-import com.example.trainbookingsystem.service.UserService;
+import com.example.trainticketbooking.entity.Ticket;
+import com.example.trainticketbooking.entity.Train;
+import com.example.trainticketbooking.entity.User;
+import com.example.trainticketbooking.service.TicketService;
+import com.example.trainticketbooking.service.TrainService;
+import com.example.trainticketbooking.service.UserService;
 
 @Controller
 @RequestMapping("/tickets")

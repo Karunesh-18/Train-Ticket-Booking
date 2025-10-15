@@ -1,4 +1,4 @@
-package com.example.trainbookingsystem.service;
+package com.example.trainticketbooking.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.trainbookingsystem.entity.Train;
-import com.example.trainbookingsystem.repository.TrainRepository;
+import com.example.trainticketbooking.entity.Train;
+import com.example.trainticketbooking.repository.TrainRepository;
 
 @Service
 public class TrainService {

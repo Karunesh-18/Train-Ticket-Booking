@@ -1,4 +1,4 @@
-package com.example.trainbookingsystem.service;
+package com.example.trainticketbooking.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.trainbookingsystem.entity.Ticket;
-import com.example.trainbookingsystem.entity.Train;
-import com.example.trainbookingsystem.entity.User;
-import com.example.trainbookingsystem.repository.TicketRepository;
+import com.example.trainticketbooking.entity.Ticket;
+import com.example.trainticketbooking.entity.Train;
+import com.example.trainticketbooking.entity.User;
+import com.example.trainticketbooking.repository.TicketRepository;
 
 @Service
 public class TicketService {

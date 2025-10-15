@@ -1,8 +1,8 @@
-package com.example.trainbookingsystem.repository;
+package com.example.trainticketbooking.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.trainbookingsystem.entity.User;
+import com.example.trainticketbooking.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 }
