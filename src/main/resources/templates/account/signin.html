@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Sign In</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #8bc7e3;
+        color: #042936;
+      }
+      .container {
+        max-width: 520px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(6, 48, 70, 0.08);
+        align-self: center;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+      }
+      button {
+        margin-top: 12px;
+        background: #3a94b5;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #2f86a0;
+      }
+      .message {
+        margin-top: 16px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #e9f5fb;
+      }
+      a {
+        text-decoration: none;
+        color: #3a94b5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign In</h1>
+      <form th:action="@{/account/signin}" method="post">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Jhon Doe" required />
+        </label>
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            placeholder="jhon@example.com"
+            required
+          />
+        </label>
+        <button type="submit">Sign In</button>
+      </form>
+
+      <div class="message" th:if="${message}" th:text="${message}"></div>
+
+      <p style="margin-top: 18px"><a href="/">Back to Home</a></p>
+    </div>
+  </body>
+</html>

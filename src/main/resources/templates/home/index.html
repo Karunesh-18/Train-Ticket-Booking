@@ -200,21 +200,21 @@
   <header class="navbar">
     <div class="navbar-inner">
       <a class="brand" href="#" aria-label="Home">
-        <img src="./img.png" alt="Logo" />
+        <img th:src="@{/images/img.png}" alt="Logo" />
       </a>
       <nav class="nav-actions">
         <div>
         <a class="nav-btn" href="#"><i class="fa-solid fa-ticket"></i>BOOKINGS</a>
         </div>
         <div>
-        <a class="nav-btn" href="#"><i class="fa-solid fa-user"></i>ACCOUNT</a>
+        <a class="nav-btn" href="/account"><i class="fa-solid fa-user"></i>ACCOUNT</a>
         </div>
       </nav>
     </div>
   </header>
   <div class="hero">
     <img class="img" style="width: 100%; height: auto;"
-    src="./ALTE - Railway France_Italy.gif" alt="Train" />
+    th:src="@{/images/Train.gif}" />
    <!-- Train Search Bar -->
   <section class="search-container" aria-label="Train search">
     <div class="search-box" id="searchBox">
