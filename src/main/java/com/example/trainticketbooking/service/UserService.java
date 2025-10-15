@@ -1,11 +1,13 @@
-package com.example.trainticketbooking.service;
+package com.example.trainbookingsystem.service;
+
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.trainticketbooking.entity.User;
-import com.example.trainticketbooking.exception.ResourceNotFoundException;
-import com.example.trainticketbooking.repository.UserRepository;
+import com.example.trainbookingsystem.entity.User;
+import com.example.trainbookingsystem.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -13,12 +15,26 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User CreateUser(User user) {
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public User getUserById(Long Id) {
-        return userRepository.findById(Id).orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + Id));
+    public User updateUser(Long id, User userDetails) {
+        User user = userRepository.findById(id).orElseThrow();
+        user.setName(userDetails.getName());
+        user.setEmail(userDetails.getEmail());
+        return userRepository.save(user);
     }
 
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
 }

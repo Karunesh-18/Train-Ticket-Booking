@@ -1,25 +1,23 @@
-package com.example.trainticketbooking.entity;
+package com.example.trainbookingsystem.entity;
 
-import jakarta.persistence.Entity;     //Used to mark a class as an entity bean
-import jakarta.persistence.GeneratedValue; //Used to generate unique IDs for entities
-import jakarta.persistence.GenerationType; //Used to specify the generation strategy for IDs
-import jakarta.persistence.Id; //Used to mark a field as the primary key
-import lombok.Data; //Used to automatically generate getters, setters, equals, hashCode, and toString methods
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
 public class Train {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
-    private Long Id;
-    private String trainName;
-    private String trainNumber;
+    private Long id;
+
+    private String name;
     private String source;
     private String destination;
-    private String arrivalTime;
-    private String departureTime;
-    private int totalSeats;
-    private int availableSeats;
+    private double basePrice;
+    private double discountPercentage;  // e.g., 10 for 10% discount
 
+    @OneToMany(mappedBy = "train", cascade = CascadeType.ALL)
+    private List<Ticket> tickets;
 }

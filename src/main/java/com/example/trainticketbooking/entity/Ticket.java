@@ -1,28 +1,30 @@
-package com.example.trainticketbooking.entity;
+package com.example.trainbookingsystem.entity;
+
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
 @Data
 public class Ticket {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String trainName;
-	private String trainNumber;
-	private String source;
-	private String destination;
-	private String dateOfJourney;
-	private String timeOfJourney;
-	private String coach;
-	private String seatNumber;
-	private String passengerName;
-	private Integer price;
-	private Integer PnrNumber;
-	private String status;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "train_id")
+    private Train train;
+
+    private LocalDateTime bookingDate;
+    private double finalPrice;
 }

@@ -1,9 +1,8 @@
-package com.example.trainticketbooking.repository;
+package com.example.trainbookingsystem.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.trainticketbooking.entity.Train;
+import com.example.trainbookingsystem.entity.Train;
 
-public interface TrainRepository extends JpaRepository<Train, Long>{
-    
+public interface TrainRepository extends JpaRepository<Train, Long> {
 }
