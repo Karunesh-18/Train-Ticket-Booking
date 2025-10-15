@@ -39,6 +39,7 @@ public class TicketController {
     public String createTicketForm(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("trains", trainService.getAllTrains());
+        model.addAttribute("ticket", new Ticket());
         return "tickets/form";
     }
 
