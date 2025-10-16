@@ -10,7 +10,8 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        
+        model.addAttribute("title", "TicketFlare — Book Tickets Easily");
+        model.addAttribute("description", "TicketFlare - simple local demo page");
         return "home/index";
     }
 }

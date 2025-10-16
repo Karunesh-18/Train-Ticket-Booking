@@ -4,6 +4,10 @@
     <title>Sign In</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -18,9 +22,14 @@
         border-radius: 12px;
         box-shadow: 0 6px 18px rgba(6, 48, 70, 0.08);
         align-self: center;
+        font-family: Poppins, sans-serif;
       }
       h1 {
         margin-top: 0;
+        color: #00bbff;
+        align-self: center;
+        font-family: Montserrat, sans-serif;
+        text-align: center;
       }
       label {
         display: block;
@@ -58,27 +67,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>Sign In</h1>
+      <h1>SIGN IN</h1>
       <form th:action="@{/account/signin}" method="post">
-        <label>
-          Name
-          <input type="text" name="name" placeholder="Jhon Doe" required />
-        </label>
-        <label>
-          Email
-          <input
-            type="email"
-            name="email"
-            placeholder="jhon@example.com"
-            required
-          />
-        </label>
+        <label>Name: <input type="text" th:field="*{name}" /></label><br />
+        <label>Email: <input type="email" th:field="*{email}" /></label><br />
         <button type="submit">Sign In</button>
       </form>
 
-      <div class="message" th:if="${message}" th:text="${message}"></div>
-
-      <p style="margin-top: 18px"><a href="/">Back to Home</a></p>
+      <p style="margin-top: 18px"><a th:href="@{/}">Back to Home</a></p>
     </div>
   </body>
 </html>
