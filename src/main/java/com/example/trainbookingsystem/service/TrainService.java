@@ -1,4 +1,4 @@
-package com.example.trainticketbooking.service;
+package com.example.trainbookingsystem.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.trainticketbooking.entity.Train;
-import com.example.trainticketbooking.repository.TrainRepository;
+import com.example.trainbookingsystem.entity.Train;
+import com.example.trainbookingsystem.repository.TrainRepository;
 
 @Service
 public class TrainService {
@@ -39,9 +39,5 @@ public class TrainService {
 
     public void deleteTrain(Long id) {
         trainRepository.deleteById(id);
-    }
-
-    public List<Train> searchTrains(String source, String destination) {
-        return trainRepository.findBySourceAndDestination(source, destination);
     }
 }
